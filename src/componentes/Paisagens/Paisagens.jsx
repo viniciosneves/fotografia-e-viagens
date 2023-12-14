@@ -2,6 +2,7 @@ import styled from "styled-components"
 import TituloSecao from "../TituloSecao/TituloSecao"
 import IconeSeta from "../IconeSeta/IconeSeta"
 import BtnLink from "../BtnLink/BtnLink"
+import { useNavigate } from "react-router-dom"
 
 const UlEstilizado = styled.ul`
     display: flex;
@@ -25,36 +26,39 @@ const LegendaEstilizada = styled.small`
 `
 
 const Paisagens = () => {
+
+    const navigate = useNavigate()
+
     return (<section>
         <TituloSecao titulo="Explorar paisagens" legenda="A vida é pra viver" />
         <UlEstilizado>
             <li>
-                <img src="/public/home/nova-zelandia.png" alt="" />
+                <img src="/home/nova-zelandia.png" alt="" />
                 <LegendaEstilizada>
                     Paisagens incríveis na Nova Zelândia
                 </LegendaEstilizada>
             </li>
             <li>
-                <img src="/public/home/malta.png" alt="" />
+                <img src="/home/malta.png" alt="" />
                 <LegendaEstilizada>
                     Paisagens Incríveis em Malta
                 </LegendaEstilizada>
             </li>
             <li>
-                <img src="/public/home/leao.png" alt="" />
+                <img src="/home/leao.png" alt="" />
                 <LegendaEstilizada>
                     O Leão na África do Sul
                 </LegendaEstilizada>
             </li>
             <li>
-                <img src="/public/home/novos-amigos.png" alt="" />
+                <img src="/home/novos-amigos.png" alt="" />
                 <LegendaEstilizada>
                     Meus novos amigos :)
                 </LegendaEstilizada>
             </li>
         </UlEstilizado>
         <div>
-            <BtnLink>
+            <BtnLink onClick={() => navigate("fotografia")}>
                 Ver todas as Paisagens <IconeSeta />
             </BtnLink>
         </div>
